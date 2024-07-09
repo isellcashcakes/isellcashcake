@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info / Tutorial - Global Cheesecake Shop</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00ff00;
+            font-family: "Courier New", Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1, h2 {
+            margin: 0.5em 0;
+        }
+        .info-text {
+            max-width: 600px;
+            text-align: center;
+            margin-top: 2em;
+        }
+        .note {
+            margin-top: 1em;
+            font-size: 1em;
+            color: #ff0000;
+        }
+        .return-button {
+            margin-top: 1em;
+            background-color: #00ff00;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .return-button:hover {
+            background-color: #008000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Info / Tutorial</h1>
+
+    <div class="info-text">
+        <p>Thank you for choosing the Global Cheesecake Shop! When sending cryptocurrency for your order, please include the following note:</p>
+        <p>"I live in [Your Country]. Please send me $5 and my cheesecake recipe back in the selected cryptocurrency."</p>
+        <p>This note helps us ensure your order is processed correctly.</p>
+        <p>For security reasons, we do not use databases to protect both you and our business.</p>
+    </div>
+
+    <div class="note">
+        <p>All transactions are final. Ensure you send the exact amount.</p>
+        <p>Please check the status of the selected cryptocurren before sending the money</p>
+        <p>To avoid delay, The delivery takes place with the $5 refund, which can take up to 5 hours</p>
+    </div>
+    </div>
+
+    <button class="return-button" onclick="goToHomePage()">Return to Home</button>
+
+    <script>
+        function goToHomePage() {
+            window.location.href = 'index.html'; // Hier den Pfad zur Startseite eintragen
+        }
+    </script>
+</body>
+</html>
