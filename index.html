@@ -6,11 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Offline</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .container {
+            text-align: center;
+        }
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Website Offline</h1>
         <p>The website is currently offline. Please check back later.</p>
+        <div id="countdown"></div>
     </div>
+    <script>
+        function startCountdown(duration) {
+            var end = Date.now() + duration * 1000;
+            var countdown = document.getElementById('countdown');
+            function updateCountdown() {
+                var now = Date.now();
+                var remaining = end - now;
+                if (remaining <= 0) {
+                    countdown.innerHTML = "The website is back online!";
+                    return;
+                }
+                var hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+                countdown.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+                setTimeout(updateCountdown, 1000);
+            }
+            updateCountdown();
+        }
+        // Countdown für 30 Stunden starten
+        startCountdown(30 * 60 * 60);
+    </script>
 </body>
 </html>
