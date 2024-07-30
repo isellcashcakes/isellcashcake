@@ -1,16 +1,126 @@
-<!-- public/offline.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Offline</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>Checkout - isellcashncake</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .cart {
+            margin-top: 2em;
+            background-color: white;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .cart h2 {
+            font-size: 1.5em;
+        }
+
+        .cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart ul li {
+            margin: 0.5em 0;
+            font-size: 1.2em;
+        }
+
+        .payment-info {
+            margin-top: 2em;
+            background-color: white;
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .payment-info h2 {
+            font-size: 1.5em;
+        }
+
+        .payment-info p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+            word-break: break-all;
+        }
+
+        .notice {
+            background-color: #ffcc00;
+            padding: 1em;
+            border: 1px solid #ff9900;
+            border-radius: 5px;
+            margin-top: 2em;
+        }
+
+        .notice h2 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .notice p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .notice strong {
+            color: #cc0000;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Website Offline</h1>
-        <p>The website is currently offline. Please check back later.</p>
-    </div>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+    <main>
+       
+            </ul>
+        </section>
+        <section class="payment-info">
+            <h2>Payment Information</h2>
+            <p>Litecoin: <strong>ltc1qc8s5ct93wkmsk0fy53tqtmzwsnlsclp3a8gq0w</strong></p>
+            <p>Ethereum: <strong>0x1189a0E9720c1db5D7bce41B7776D4210eC72Bf0</strong></p>
+            <p>Bitcoin: <strong>bc1qerlsnvu5xzegjvlyrqn60j03k8m7luusqnjpyu</strong></p>
+            <p>Dogecoin: <strong>DAz6zRQEFk4Uic2qtZ49B9YSKfR7pYFWuc</strong></p>
+            <p>Polygon: <strong>0x1189a0E9720c1db5D7bce41B7776D4210eC72Bf0</strong></p>
+        </section>
+        <section class="notice">
+            <h2>Important Notice</h2>
+            <p><strong>To process your order, please make sure to include the following information with your cryptocurrency payment:</strong></p>
+            <p>1. Send the payment to one of the provided cryptocurrency addresses.</p>
+            <p>2. Include an <strong>anonymous email address</strong> as a note with your payment. This email address will be used to confirm your payment and complete your order.</p>
+            <p><strong>Without the anonymous email address, we will not be able to process your order.</strong></p>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartList = document.getElementById('cart');
+            cart.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price} - ${item.country}`;
+                cartList.appendChild(listItem);
+            });
+        });
+    </script>
 </body>
 </html>
