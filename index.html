@@ -168,7 +168,6 @@
                 <!-- Cart items will be added here -->
             </ul>
             <button onclick="checkout()">Go to Checkout</button>
-            <button onclick="authorizePayment()">Authorize Your Payment</button>
         </section>
     </main>
 
@@ -194,11 +193,6 @@
         function checkout() {
             localStorage.setItem('cart', JSON.stringify(cart));
             window.location.href = 'buy.html';
-        }
-
-        function authorizePayment() {
-            localStorage.setItem('cart', JSON.stringify(cart));
-            window.location.href = 'andere.html';
         }
     </script>
 </body>
